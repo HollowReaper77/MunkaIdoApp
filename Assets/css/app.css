@@ -1,19 +1,56 @@
 body{
-    background-color: lightgray;
+    background-color: silver;
+    color: black;
 }
 
 .container{
-    background-color: blue;
+    background-color: white;
+    box-shadow: 0 0 10px gray;
+    padding: 10px;
 }
 
 header{
-    background-color: lightblue;
+    background-color: slategray;
+    color: white;
+    font-size: 200%;
+    text-align: center;
+    text-shadow: 0 0 3px black;
+    min-height: 0px;
 }
 
 main{
-    background-color: lightsalmon;
+    background-color: white;
 }
 
 footer{
-    background-color: lightgreen;
+    background-color: black;
+    color: white;
+    letter-spacing: 3px;
+    font-size: 80%;
+    text-align: center;
+    padding: 10px;
+}
+
+section{
+    padding: 10px;
+}
+
+aside{
+    padding: 10px;
+    background-color: rgb(232, 232, 232);
+}
+
+.row{
+    margin: 0px;
+    padding: 0;
+    border: 0;
+}
+
+p{
+    text-align: justify;
+    line-height: 200%;
+}
+
+textarea{
+    min-height: 200px !important;
 }
