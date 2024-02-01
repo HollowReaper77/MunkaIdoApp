@@ -1,0 +1,19 @@
+body{
+    background-color: lightgray;
+}
+
+.container{
+    background-color: blue;
+}
+
+header{
+    background-color: lightblue;
+}
+
+main{
+    background-color: lightsalmon;
+}
+
+footer{
+    background-color: lightgreen;
+}
