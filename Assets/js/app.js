@@ -5,7 +5,7 @@ app.run(function($rootScope){
     $rootScope.debugtext = 'debug'
 
     $rootScope.company = 'Bajai SZC Türr István Technikum';
-    $rootScope.author = '5/13.szoftverfejlesztő';
+    $rootScope.author = '5/13.szoftverfejlesztő - DT';
 
     $rootScope.navItems = [];
 

@@ -1,0 +1,33 @@
+<h1>Statisztika</h1>
+<select class="form-select" aria-label="Default select example">
+    <option repeat="employe in employees">{{employees.empID}}</option>
+</select>
+
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Month</th>
+            <th>Category</th>
+            <th>Author</th>
+            <th>Length</th>
+            <th>Year</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="film in filmek | filter:searchField" ng-class="{red: film.length>120}" ng-click="details(film)"  data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <td>{{$index+1}}.</td>
+            <td>{{film.title}}</td>
+            <td>{{film.category}}</td>
+            <td>{{film.author}}</td>
+            <td>{{film.length}} min.</td>
+            <td>{{film.year}}.</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="6">Összesen: {{employees.length}} film.</td>
+        </tr>
+    </tfoot>
+</table>
