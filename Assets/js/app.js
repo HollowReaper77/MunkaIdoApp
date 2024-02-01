@@ -20,15 +20,15 @@ app.run(function($rootScope){
 
 app.config(function($routeProvider){
     $routeProvider
-    .when('/index', {
-        templateUrl: 'Views/index.html'
+    .when('/statistics', {
+        templateUrl: 'Views/statistics.html'
     })
-    .when('/adatfelvetel', {
-        templateUrl: 'Views/adatfelvetel.html',
-        controller: 'userCtrl'
+    .when('/employees', {
+        templateUrl: 'Views/employees.html',
+        controller: 'employeesCtrl'
     })
-    .when('/calendar', {
-        templateUrl: 'Views/calendar.html',
-        controller: 'tableCtrl'
+    .when('/worktimes', {
+        templateUrl: 'Views/worktimes.html',
+        controller: 'worktimesCtrl'
     })
 });
