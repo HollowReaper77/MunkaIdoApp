@@ -32,6 +32,6 @@ app.config(function($routeProvider){
         controller: 'worktimesCtrl'
     })
     .otherwise(
-        {redirectTo: '/index.html'}
+        {redirectTo: '/statisctics.html'}
     )
 });
