@@ -31,4 +31,7 @@ app.config(function($routeProvider){
         templateUrl: 'Views/worktimes.html',
         controller: 'worktimesCtrl'
     })
+    .otherwise(
+        {redirectTo: '/index.html'}
+    )
 });
