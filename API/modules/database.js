@@ -10,3 +10,9 @@ var pool = mysql.createPool({
     database: process.env.DBNAME,
     timezone: 'UTC'
 })
+
+// ENDPOINTS
+
+// get all records
+
+router.get()
