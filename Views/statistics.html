@@ -1,6 +1,6 @@
 <h1>Statisztika</h1>
 <select class="form-select" aria-label="Default select example">
-    <option repeat="employe in employees">{{employees.empID}}</option>
+    <option ng-repeat="month in months">{{month}} hónap</option>
 </select>
 
 
@@ -8,26 +8,21 @@
     <thead>
         <tr>
             <th>#</th>
-            <th>Month</th>
-            <th>Category</th>
-            <th>Author</th>
-            <th>Length</th>
-            <th>Year</th>
+            <th>Alkalmazot</th>
+            <th>Munkabér</th>
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="film in filmek | filter:searchField" ng-class="{red: film.length>120}" ng-click="details(film)"  data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        <tr ng-repeat="employe in employees | filter:searchField" ng-click="details(film)"  data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             <td>{{$index+1}}.</td>
-            <td>{{film.title}}</td>
-            <td>{{film.category}}</td>
-            <td>{{film.author}}</td>
-            <td>{{film.length}} min.</td>
-            <td>{{film.year}}.</td>
+            <td>{{employe.name}}</td>
+            <td>{{employe.cost}}</td>
+
         </tr>
     </tbody>
     <tfoot>
         <tr>
-            <td colspan="6">Összesen: {{employees.length}} film.</td>
+            <td colspan="6">Összesen kifizetendő bér: {{employees.length}}</td>
         </tr>
     </tfoot>
 </table>

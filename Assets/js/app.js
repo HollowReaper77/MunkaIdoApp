@@ -21,17 +21,18 @@ app.run(function($rootScope){
 app.config(function($routeProvider){
     $routeProvider
     .when('/statistics', {
-        templateUrl: 'Views/statistics.html'
+        templateUrl: 'Views/statistics.html',
+        controller: 'statisticsCtrl'
     })
     .when('/employees', {
-        templateUrl: 'Views/employees.html',
+        templateUrl: 'Views/employees.html', //felvétel törlés módosítás
         controller: 'employeesCtrl'
     })
     .when('/worktimes', {
         templateUrl: 'Views/worktimes.html',
-        controller: 'worktimesCtrl'
+        controller: 'worktimesCtrl' // havibontásban az adott hónapban kifizetendő munkabér
     })
     .otherwise(
-        {redirectTo: '/statisctics.html'}
+        {redirectTo: 'statistics'} // nem létező linkel azonnal statisztikára irányít
     )
 });

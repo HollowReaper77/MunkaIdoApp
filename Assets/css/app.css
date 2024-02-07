@@ -55,3 +55,23 @@ p{
 textarea{
     min-height: 200px !important;
 }
+
+table{
+    padding: 20px;
+}
+
+form{
+    margin: 20px;
+}
+
+.inputText{
+    margin: 10px;
+}
+
+button{
+    margin: 10px 15px 10px 0px;
+}
+
+select{
+    margin-bottom: 10px;
+}

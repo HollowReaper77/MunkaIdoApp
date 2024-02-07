@@ -1,16 +1,18 @@
 <h1>Alkalmazottak kezelése</h1>
-<select class="form-select" aria-label="Default select example">
-  <option selected>{{employees.empID}}</option>
-</select>
-<div class="form-floating mb-3">
-    <input type="name" class="form-control" id="floatingName" placeholder="name">
-    <label for="floatingName">Name</label>
-  </div>
-  <div class="form-floating">
-    <input type="address" class="form-control" id="floatingAddress" placeholder="Address">
-    <label for="floatingName">Address</label>
-  </div>
-
-  <button type="button" class="btn btn-primary">Felvétel</button>
-  <button type="button" class="btn btn-primary">Módosít</button>
-  <button type="button" class="btn btn-primary">Törlés</button>
+<form>
+  <select class="form-select" aria-label="Default select example">
+    <option selected>{{employees.empID}}</option>
+  </select>
+  <div class="form-floating mb-3">
+      <input type="name" class="form-control" id="floatingName" placeholder="name">
+      <label for="floatingName">Name</label>
+    </div>
+    <div class="form-floating">
+      <input type="address" class="form-control" id="floatingAddress" placeholder="Address">
+      <label for="floatingName">Address</label>
+    </div>
+  
+    <button type="button" class="btn btn-primary">Felvétel</button>
+    <button type="button" class="btn btn-primary">Módosít</button>
+    <button type="button" class="btn btn-primary">Törlés</button>
+</form>
