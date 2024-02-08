@@ -1,28 +1,28 @@
 <h1>Alkalmazottak kezelése</h1>
-<form>
-  <select class="form-select" aria-label="Default select example">
-    <option selected>{{employees.empID}} Alkalmazott</option>
+<form ng-submit="employeManagement()">
+  <select class="form-select" aria-label="Default select example" ng-model="employe">
+    <option selected ng-repeat="enmploye in employees">{{employe}} Alkalmazott</option>
   </select>
   <div class="form-floating mb-3">
-      <input type="name" class="form-control" id="floatingName" placeholder="name">
+      <input type="name" class="form-control" id="floatingName" placeholder="name" ng-model="employe.name">
       <label for="floatingName">Name</label>
     </div>
     <div class="form-floating mb-3">
-      <input type="address" class="form-control" id="floatingAddress" placeholder="Address">
-      <label for="floatingName">Address</label>
+      <input type="address" class="form-control" id="floatingAddress" placeholder="Address" ng-model="employe.address">
+      <label for="floatingAddress">Address</label>
     </div>
 
     <div class="form-floating mb-3">
-      <input type="text" class="form-control" id="floatingPosition" placeholder="Position">
+      <input type="text" class="form-control" id="floatingPosition" placeholder="Position" ng-model="employe.position">
       <label for="floatingPosition">Position</label>
     </div>
 
     <div class="form-floating mb-3">
-      <input type="number" class="form-control" id="floatingWage" placeholder="Wage">
-      <label for="floatingWage">Bér</label>
+      <input type="number" class="form-control" id="floatingpricePerHour" placeholder="pricePerHour" ng-model="employe.pricePerHour">
+      <label for="floatingpricePerHour">Bér</label>
     </div>
   
-    <button type="button" class="btn btn-primary">Felvétel</button>
-    <button type="button" class="btn btn-primary">Módosít</button>
-    <button type="button" class="btn btn-primary">Törlés</button>
+    <button type="submit" class="btn btn-primary">Felvétel</button>
+    <button type="submit" class="btn btn-primary">Módosít</button>
+    <button type="submit" class="btn btn-primary">Törlés</button>
 </form>

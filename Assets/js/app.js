@@ -1,5 +1,6 @@
 var app = angular.module('MunkaIdoApp', ['ngRoute', 'ngNotify']);
 
+
 app.run(function($rootScope){
     $rootScope.appTitle = 'Munka Idő App';
     $rootScope.debugtext = 'debug'
@@ -22,7 +23,7 @@ app.config(function($routeProvider){
     $routeProvider
     .when('/statistics', {
         templateUrl: 'Views/statistics.html',
-        controller: 'statisticsCtrl'
+        controller: 'statisticsCtrl' // statisztika
     })
     .when('/employees', {
         templateUrl: 'Views/employees.html', //felvétel törlés módosítás
