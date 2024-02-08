@@ -4,7 +4,7 @@ var app = angular.module('MunkaIdoApp', ['ngRoute', 'ngNotify']);
 app.run(function($rootScope){
     $rootScope.appTitle = 'Munka Idő App';
     $rootScope.debugtext = 'debug'
-
+    $rootScope.serverUrl = 'http://localhost:5000';
     $rootScope.company = 'Bajai SZC Türr István Technikum';
     $rootScope.author = '5/13.szoftverfejlesztő - DT';
 

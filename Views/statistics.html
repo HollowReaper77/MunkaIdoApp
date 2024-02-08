@@ -1,6 +1,6 @@
 <h1>Statisztika</h1>
 <select class="form-select" aria-label="Default select example">
-    <option ng-repeat="month in months">{{month}}</option>
+    <option ng-repeat="month in months" id="option">{{month}}</option>
 </select>
 
 
@@ -13,7 +13,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="employe in employees | filter:searchField" ng-click="details(film)"  data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        <tr ng-repeat="employe in employees | filter: option" ng-click="details(month)"  data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             <td>{{$index+1}}.</td>
             <td>{{employe.name}}</td>
             <td>{{employe.cost}}</td>

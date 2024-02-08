@@ -11,12 +11,12 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="employe in employees" ng-click="details(employees)"  data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        <tr ng-repeat="worktime in worktimes" ng-click="details(worktime)"  data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             <td>{{$index+1}}.</td>
-            <td>{{employees.empID}}</td>
-            <td>{{employees.date}}</td>
-            <td>{{employees.start}}</td>
-            <td>{{employees.end}}</td>
+            <td>{{worktime.empID}}</td>
+            <td>{{worktime.date}}</td>
+            <td>{{worktime.start}}</td>
+            <td>{{worktime.end}}</td>
         </tr>
     </tbody>
 </table>
@@ -25,7 +25,7 @@
 <hr>
 <form>
     <select class="form-select" aria-label="Default select example">
-      <option selected ng-repeat="employe in employees">{{employees}} Alkalmazott</option>
+      <option selected ng-repeat="employe in employees" id="option">{{employees}} Alkalmazott</option>
     </select>
     <div class="form-floating mb-3">
         <input type="name" class="form-control" id="floatingName" placeholder="name">
@@ -33,17 +33,17 @@
       </div>
       <div class="form-floating mb-3">
         <input type="date" class="form-control" id="floatingDate" placeholder="Date">
-        <label for="floatingName">Dátum</label>
+        <label for="floatingDate">Dátum</label>
       </div>
   
       <div class="form-floating mb-3">
         <input type="time" class="form-control" id="floatingStart" placeholder="Start">
-        <label for="floatingName">Kezdet</label>
+        <label for="floatingStart">Kezdet</label>
       </div>
 
       <div class="form-floating mb-3">
         <input type="time" class="form-control" id="floatingEnd" placeholder="End">
-        <label for="floatingName">Vége</label>
+        <label for="floatingEnd">Vége</label>
       </div>
     
       <button type="button" class="btn btn-primary">Felvétel</button>
