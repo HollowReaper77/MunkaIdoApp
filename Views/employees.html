@@ -1,15 +1,25 @@
 <h1>Alkalmazottak kezelése</h1>
 <form>
   <select class="form-select" aria-label="Default select example">
-    <option selected>{{employees.empID}}</option>
+    <option selected>{{employees.empID}} Alkalmazott</option>
   </select>
   <div class="form-floating mb-3">
       <input type="name" class="form-control" id="floatingName" placeholder="name">
       <label for="floatingName">Name</label>
     </div>
-    <div class="form-floating">
+    <div class="form-floating mb-3">
       <input type="address" class="form-control" id="floatingAddress" placeholder="Address">
       <label for="floatingName">Address</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingPosition" placeholder="Position">
+      <label for="floatingPosition">Position</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="number" class="form-control" id="floatingWage" placeholder="Wage">
+      <label for="floatingWage">Bér</label>
     </div>
   
     <button type="button" class="btn btn-primary">Felvétel</button>

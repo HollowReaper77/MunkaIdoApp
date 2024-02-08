@@ -20,3 +20,34 @@
         </tr>
     </tbody>
 </table>
+
+
+<hr>
+<form>
+    <select class="form-select" aria-label="Default select example">
+      <option selected>{{employees.empID}} Alkalmazott</option>
+    </select>
+    <div class="form-floating mb-3">
+        <input type="name" class="form-control" id="floatingName" placeholder="name">
+        <label for="floatingName">Name</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="date" class="form-control" id="floatingDate" placeholder="Date">
+        <label for="floatingName">Dátum</label>
+      </div>
+  
+      <div class="form-floating mb-3">
+        <input type="time" class="form-control" id="floatingStart" placeholder="Start">
+        <label for="floatingName">Kezdet</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input type="time" class="form-control" id="floatingEnd" placeholder="End">
+        <label for="floatingName">Vége</label>
+      </div>
+    
+      <button type="button" class="btn btn-primary">Felvétel</button>
+      <button type="button" class="btn btn-primary">Módosít</button>
+      <button type="button" class="btn btn-primary">Törlés</button>
+  </form>
+  
