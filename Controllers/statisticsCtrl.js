@@ -1,9 +1,10 @@
 app.controller('statisticsCtrl', function($scope, ngNotify, $rootScope){
     $scope.months = ['Janurár', 'Február', 'Máricus', 'Április', 'Május', 'Június', 'Augustus', 'Szeptemper', 'Október', 'November', 'December']
 
+    $scope.cost=[]
+
     $scope.employee = {};
     $scope.employees = [];
-    $scope.editmode = false;
 
     $scope.getAllEmployes = function(){
         axios.get($rootScope.serverUrl+'/employees').then(res => {
@@ -14,5 +15,17 @@ app.controller('statisticsCtrl', function($scope, ngNotify, $rootScope){
 
     $scope.getAllEmployes()
 
-    
+
+
+    $scope.worktime = {};
+    $scope.worktimes = [];
+
+    $scope.getAllworkTimes = function(){
+        axios.get($rootScope.serverUrl+'/worktimes').then(res => {
+            $scope.worktimes = res.data;
+            $scope.$apply();
+        });
+    }
+
+    $scope.getAllworkTimes()
 });

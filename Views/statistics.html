@@ -16,13 +16,14 @@
         <tr ng-repeat="employe in employees | filter: option" ng-click="details(month)"  data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             <td>{{$index+1}}.</td>
             <td>{{employe.name}}</td>
-            <td>{{employe.cost}}</td>
+            <td ng-repeat="worktime in worktimes">{{worktime.pricePerHour}}</td>
+
 
         </tr>
     </tbody>
     <tfoot>
         <tr>
-            <td colspan="6">Összesen kifizetendő bér: {{employees.length}}</td>
+            <td colspan="6">Összesen kifizetendő bér: {{worktime.length}}</td>
         </tr>
     </tfoot>
 </table>

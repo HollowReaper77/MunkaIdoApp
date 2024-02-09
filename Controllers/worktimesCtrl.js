@@ -18,19 +18,33 @@ app.controller('worktimesCtrl', function($scope, ngNotify, $rootScope){
     $scope.getAllEmployes()
 
 
+    $scope.getAworkTime = function(id){
+        if($scope.employee.ID == $scope.worktime.empID){
+            axios.get($rootScope.serverUrl+'/worktimes/:id').then(res => {
+                $scope.worktimes = res.data;
+                $scope.$apply();
+            });
+        }
+    }
+
+    $scope.getAworkTime()
+
+
+
+
+
     $scope.insert = function(){
 
-        if ($scope.employee.name == $scope.employee.name || $scope.employee.address == $scope.employee.address || $scope.employee.position == $scope.employee.position || $scope.employee.pricePerHour == $scope.employee.pricePerHour){
+        if ($scope.worktime.date == $scope.worktime.date || $scope.employee.name == $scope.employee.name ){
             ngNotify.set("ERROR! Din't filled all of the field!");
         }else{
         // hibakezelése
         let data = {
-            name: $scope.employee.name,
-            address:  $scope.employee.address,
-            position:  $scope.employee.position,
-            pricePerHour:  $scope.employee.pricePerHour,
+            date:  $scope.worktime.date,
+            start:  $scope.worktime.position,
+            end:  $scope.worktime.pricePerHour,
         }
-        axios.post($rootScope.serverUrl+'/employees', data).then(res=>{
+        axios.post($rootScope.serverUrl+'/worktimes', data).then(res=>{
             console.log("[LOG]: The new employee has successfully added!");
             ngNotify.set("The new employee has successfully added!");
         });
@@ -45,12 +59,11 @@ app.controller('worktimesCtrl', function($scope, ngNotify, $rootScope){
         }else{
         // hibakezelése
         let data = {
-            name: $scope.employee.name,
-            address:  $scope.employee.address,
-            position:  $scope.employee.position,
-            pricePerHour:  $scope.employee.pricePerHour,
+            date:  $scope.worktime.date,
+            start:  $scope.worktime.position,
+            end:  $scope.worktime.pricePerHour,
         }
-        axios.patch($rootScope.serverUrl+'/employees/:id', data).then(res=>{
+        axios.patch($rootScope.serverUrl+'/worktimes/:id', data).then(res=>{
             console.log("[LOG]: The employee has successfully updated!");
             ngNotify.set("The employee has successfully updated!");
         });
@@ -62,7 +75,7 @@ app.controller('worktimesCtrl', function($scope, ngNotify, $rootScope){
         if($rootScope.employee.name == null){
             ngNotify.set("ERROR! This is not a real employee!");
         }else{
-            axios.delete($rootScope.serverUrl+'/employees/:id', data).then(res=>{
+            axios.delete($rootScope.serverUrl+'/worktimes/:id', data).then(res=>{
                 console.log("[LOG]: The employee has successfully deleted!");
                 ngNotify.set("The employee has successfully deleted!");
             });
