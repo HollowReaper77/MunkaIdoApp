@@ -23,31 +23,35 @@
 
 
 <hr>
-<form>
-    <select class="form-select" aria-label="Default select example">
-      <option selected ng-repeat="employe in employees" id="option">{{employees}} Alkalmazott</option>
-    </select>
+<form ng-submit="getAllEmploye()">
+  <select class="form-select" aria-label="Default select example" ng-model="emp" ng-change="select(emp)">
+    <option ng-repeat="employee in employees" id="option" value="{{employee.ID}}">{{employee.name}}</option>
+  </select>
+  <!--
     <div class="form-floating mb-3">
-        <input type="name" class="form-control" id="floatingName" placeholder="name">
+        <input type="name" class="form-control" id="floatingName" placeholder="name" ng-model="">
         <label for="floatingName">Name</label>
-      </div>
+    </div>
+  -->
+
       <div class="form-floating mb-3">
-        <input type="date" class="form-control" id="floatingDate" placeholder="Date">
+        <input type="date" class="form-control" id="floatingDate" placeholder="Date" ng-model="worktime.date">
         <label for="floatingDate">Dátum</label>
       </div>
   
       <div class="form-floating mb-3">
-        <input type="time" class="form-control" id="floatingStart" placeholder="Start">
+        <input type="time" class="form-control" id="floatingStart" placeholder="Start" ng-model="worktime.start">
         <label for="floatingStart">Kezdet</label>
       </div>
 
       <div class="form-floating mb-3">
-        <input type="time" class="form-control" id="floatingEnd" placeholder="End">
+        <input type="time" class="form-control" id="floatingEnd" placeholder="End" ng-model="worktime.end">
         <label for="floatingEnd">Vége</label>
       </div>
     
-      <button type="button" class="btn btn-primary">Felvétel</button>
-      <button type="button" class="btn btn-primary">Módosít</button>
-      <button type="button" class="btn btn-primary">Törlés</button>
+      <button type="button" class="btn btn-primary" ng-click="insert()" ng-if="!editmode">Felvétel</button>
+      <button type="button" class="btn btn-primary" ng-click="update(worktime.ID)" ng-if="editmode">Módosít</button>
+      <button type="button" class="btn btn-primary" ng-click="delete(worktime.ID)" ng-if="editmode">Törlés</button>
+      <button type="button" class="btn btn-primary" ng-click="cancel()" ng-if="editmode">Mégsem</button>
   </form>
   

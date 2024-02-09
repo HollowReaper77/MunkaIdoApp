@@ -15,7 +15,7 @@ app.controller('employeesCtrl', function($scope, ngNotify, $rootScope){
 
     $scope.insert = function(){
 
-        if ($scope.employee.name == null || $scope.employee.address == null || $scope.employee.position == null || $scope.employee.address == null){
+        if ($scope.employee.name == $scope.employee.name || $scope.employee.address == $scope.employee.address || $scope.employee.position == $scope.employee.position || $scope.employee.pricePerHour == $scope.employee.pricePerHour){
             ngNotify.set("ERROR! Din't filled all of the field!");
         }else{
         // hibakezelése
@@ -54,7 +54,14 @@ app.controller('employeesCtrl', function($scope, ngNotify, $rootScope){
 
     
     $scope.delete = function(id){
-
+        if($rootScope.employee.name == null){
+            ngNotify.set("ERROR! This is not a real employee!");
+        }else{
+            axios.delete($rootScope.serverUrl+'/employees/:id', data).then(res=>{
+                console.log("[LOG]: The employee has successfully deleted!");
+                ngNotify.set("The employee has successfully deleted!");
+            });
+        }
     }
 
     
