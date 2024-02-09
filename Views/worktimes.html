@@ -49,9 +49,9 @@
         <label for="floatingEnd">Vége</label>
       </div>
     
-      <button type="button" class="btn btn-primary" ng-click="insert()" ng-if="!editmode">Felvétel</button>
-      <button type="button" class="btn btn-primary" ng-click="update(worktime.ID)" ng-if="editmode">Módosít</button>
-      <button type="button" class="btn btn-primary" ng-click="delete(worktime.ID)" ng-if="editmode">Törlés</button>
-      <button type="button" class="btn btn-primary" ng-click="cancel()" ng-if="editmode">Mégsem</button>
+      <button type="button" class="btn btn-primary" ng-click="insert()" ng-if="editmode">Felvétel</button>
+      <button type="button" class="btn btn-primary" ng-click="update(worktime.ID)" ng-if="!editmode">Módosít</button>
+      <button type="button" class="btn btn-primary" ng-click="delete(worktime.ID)" ng-if="!editmode">Törlés</button>
+      <button type="button" class="btn btn-primary" ng-click="cancel()" ng-if="!editmode">Mégsem</button>
   </form>
   

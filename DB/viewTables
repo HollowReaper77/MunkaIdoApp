@@ -1,0 +1,10 @@
+CREATE OR REPLACE VIEW worktimes_vt AS
+SELECT 
+    worktimes.ID, 	
+    worktimes.empID,
+    employees.name,
+    worktimes.date,
+    worktimes.start, 	
+    worktimes.end 
+FROM worktimes
+INNER JOIN employees ON employees.ID = worktimes.empID

@@ -45,9 +45,8 @@ app.get('/employees/:id', function (req, res) {
 });
 
 // post new employee
-app.post('/employees/:id', function (req, res) {
-    let id = req.params.id;
-
+app.post('/employees', function (req, res) {
+    
     let values = '"'+ Object.values(req.body).join('","') +'"';
     let fields = Object.keys(req.body).join(',');
 
