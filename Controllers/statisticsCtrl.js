@@ -28,4 +28,17 @@ app.controller('statisticsCtrl', function($scope, ngNotify, $rootScope){
     }
 
     $scope.getAllworkTimes()
+
+
+    $scope.statistic = {};
+    $scope.statistics = [];
+
+    $scope.getAllstatistics = function(){
+        axios.get($rootScope.serverUrl+'/worktimes_vt').then(res => {
+            $scope.statistics = res.data;
+            $scope.$apply();
+        });
+    }
+
+    $scope.getAllstatistics()
 });
