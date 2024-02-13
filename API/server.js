@@ -171,6 +171,18 @@ app.delete('/worktimes/:id', function (req, res) {
       });
 });
 
+// lehet, hogy pricePerHour-t hozzá kellene adni virtuális táblához
+// get all statistics
+app.get('/worktimes_vt', function (req, res) {
+    pool.query('SELECT * FROM worktimes_vt', function (error, results) {
+        if (error) {
+            res.status(500).send(error);
+        }else{
+            res.status(200).send(results);
+        }    
+      });
+});
+
 
 app.listen(port, ()=>{
     console.log(`Server listening on port ${port}...`);
